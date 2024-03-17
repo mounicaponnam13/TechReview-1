@@ -1,0 +1,14 @@
+<!-- templates/upload.html-->
+{% extends 'base.html' %}
+
+<h1>Upload</h1>
+
+{% block content %}
+<form id="example-form1" action="." method="post" enctype="multipart/form-data">{% csrf_token %}
+    <label for="fileupload" class="drop-container">CSV File:</label>
+    <input type="file" class="custom-file-input" id="fileupload" name="csv" required accept=".csv" size="60">
+    <div>
+        <input type="submit" class="button" value="Submit">
+    </div>
+</form>
+{% endblock %}

@@ -1,0 +1,27 @@
+<!-- templates/home.html-->
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+  <p>Hi {{ user.username }}!</p>
+
+  <p>Actions:
+  <ul>
+      <li><a href="upload/">Upload Data File</a></li>
+      <li><a href="sampledataview/">View Sample Data</a></li>
+      <li><a href="map/">Map</a></li>
+  </ul>
+  </p>
+  
+{% else %}
+  <p>You are not logged in</p>
+  <a href="{% url 'login' %}">Log In</a>
+{% endif %}
+
+{% if user.is_authenticated %}
+<a href="{% url 'logout' %}">Log Out</a>
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,4 @@
+
+tech-review-qacicd/testapp/*
+tech-review-qacicd/Tests/__pycache__/*
+/tech-review-qacicd/.idea
